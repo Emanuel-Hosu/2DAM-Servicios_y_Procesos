@@ -38,11 +38,15 @@ class HiloConcursante extends Thread {
 			int guadador = num;
 			
 			if (numOculto.propuestaNumero(guadador) == -1) {
-			    System.out.println("==" + this.id + " ha acertado usando el numero " + guadador);
-			    juegoTerminado = true;
-			} else if (numOculto.propuestaNumero(guadador) == 1){
-			    juegoTerminado = false;
-			} 
+				System.out.println("==" + this.id + " ha acertado usando el numero " + guadador);
+				juegoTerminado = true;
+			}else if (numOculto.propuestaNumero(guadador) == 1){
+				juegoTerminado = false;
+			}else {
+				System.out.println("No se ha encontrado el numero oculto");
+				juegoTerminado = false;
+				
+			}
 			
 			//triple, si la variable booleana de porpuestaNumero() es true, tiene que devolver siempre un -1 a los otros hilos que acierten
 		}

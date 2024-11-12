@@ -19,13 +19,20 @@ class NumeroOculto {
 	/*IF NÚMERO RECIBIDO POR PARÁMETRO == A NÚMERO OCULTO ENTONCES NUMADIVINADO = TRUE Y RETORNAR TRUE, SI ES AL REVÉS RETORNAR FALSE;*/
 
 	
-	public synchronized int propuestaNumero(int recibido) {
-	    //B) 1 SI EL NÚMERO PROPUESTO (NUM) ES EL NÚMERO OCULTO.
-	    if (recibido == this.numOculto && !this.numAdivinado) {
-	        this.numAdivinado = true;
-	        return -1; // Retornar -1 para indicar que se ha acertado el número
-	    } else {
-	        return 1;
-	    }
+	public int propuestaNumero(int recibido) {
+		//B) 1 SI EL NÚMERO PROPUESTO (NUM) ES EL NÚMERO OCULTO. 
+		if (recibido == this.numOculto){
+			this.numAdivinado = true;
+		}else if (recibido != this.numOculto){
+			this.numAdivinado = false;
+		}else {
+			this.numAdivinado = false;
+		}
+		
+		if (this.numAdivinado) {
+			return -1;
+		}else {
+			return 1;
+		}
 	}
 }
