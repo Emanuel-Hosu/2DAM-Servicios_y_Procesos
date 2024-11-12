@@ -1,0 +1,11 @@
+package main;
+
+public class Main {
+    public static void main (String args[]) {
+        AddThread add = new AddThread ();
+        add.start();
+        SubThread sub = new SubThread ();
+        sub.start();
+        System.out.println ("main exited");
+    }
+}
